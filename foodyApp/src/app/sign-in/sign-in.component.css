@@ -1,0 +1,126 @@
+
+  .sidenav {
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.form-wrap {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: #fff;
+    
+    float:left;
+    padding: 4em 4em 0.1em;
+    width:100%;
+    position: relative;
+    box-shadow: 0 0 1em #222;
+    border-radius: 2px;
+  }
+h2 {
+    margin: 0 0 50px 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #666666;
+    border-bottom: solid 1px #e5e5e5;
+  }
+  h1{
+    margin: 0 0 50px 0;
+    padding: 10px;
+    text-align: center;
+    color:rgb(61, 35, 1);
+    border-bottom: solid 1px #e5e5e5;
+  }
+  
+input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    margin: 0;
+     
+
+  }
+  
+  input.ng-invalid.ng-touched{
+    border: 0.5px solid red;
+}
+.field{
+  margin: 0 0 3em 0;
+  position: relative;
+}
+
+.feedback{
+  margin: 0em 0em 0em 0em;
+  color: red;
+  font-size: small;
+}
+    
+input[type="text"],
+input[type="password"] {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    font-size: 1em;
+    padding: 1.5em 0.5em;
+    border-radius: 2px;
+    
+  }
+.sideContent{
+  background-color:rgba(177, 148, 109, 0.568) ;
+  font-size: larger;
+  color: rgb(61, 35, 1);
+}
+.signInButton{
+  display: block;
+    box-sizing: border-box;
+    width: 50%;
+    outline: rgba(83, 53, 12, 0.7);
+    background: rgba(177, 148, 109, 0.568);
+    color: rgb(61, 35, 1);
+    border-radius: 2px;
+    font-size: 1em;
+    line-height: 1.6em;
+    padding: 0.8em 0;
+    margin-left: 25%;
+
+}
+button[type="submit"] {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    background: rgba(119, 68, 1, 0.7);
+    border-radius: 2px;
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 2em;
+    line-height: 1.6em;
+    margin: 2em 0 0;
+    outline: none;
+    padding: 0.8em 0;
+    text-shadow: 0 1px #e6e33e;
+  }
+button:hover[type="submit"] {
+    background: rgba(83, 53, 12, 0.7);;
+    text-shadow: 0 1px 3px rgba(70, 93, 41, 0.7);
+  }
+label {
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    color: #999;
+    font-size: 16px;
+    display: inline-block;
+    padding: 4px 10px;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0);
+  }
+label.floatLabel {
+    top: -11px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+  }
+  

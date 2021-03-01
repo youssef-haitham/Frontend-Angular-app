@@ -1,0 +1,49 @@
+
+
+
+<div class="view container-fluid " style="background-image: url('https://www.foodreviewonline.com/new/wp-content/uploads/2019/01/food-banner.jpg'); height:35vw; background-repeat: no-repeat; background-size: cover;">
+  <div class="mask rgba-black-light d-flex justify-content-center align-middle">
+
+  <!-- Content -->
+  <div class="text-center align-middle mt-5 text-dark"  >
+
+  <p style="font-size:larger;margin-top:25%;" class="mb-4 d-none d-md-block">
+    <strong  style="font-family: cursive; ">Get the best of all cuisines delivered right to your doorstep in an instant!</strong>
+  </p>
+
+</div>
+<!-- Content -->
+
+</div>
+
+</div>
+
+ <div  style="margin:auto;width:40%">
+ <img src="../../assets/menu.png" />
+</div>
+  <!--MENU-->
+    <div class="container" style="display: block;" *ngFor="let type of productTypes;let i=index">
+      <div class="wrapper">
+        
+        
+      <div class="clear"> <h1><span style="font-family: cursive;">{{type}}</span></h1></div>
+      <div class="clear"></div>
+      <!-- items -->
+      <div class="items" *ngFor="let product of products;let i=index" >
+          <!-- single item -->
+        
+          <div class="item"  [ngbTooltip]="tipContent" *ngIf="type==product.type">
+              <img class="productImage" width="150px" height="150px" [src]="product.image" alt="item" />
+                <h2>{{product.name}}</h2>
+                <p>Price: <em>${{product.price}}</em></p>
+              <button *ngIf="signed"class="add-to-cart" (click)="addtoCart(product)" type="button">Add to cart</button>
+
+          </div>
+          <ng-template #tipContent>{{product.description}}</ng-template>
+          <!--/ single item -->
+          
+      </div>
+      <!--/ items -->
+      </div>
+    </div>
+      <!--/ MENU -->

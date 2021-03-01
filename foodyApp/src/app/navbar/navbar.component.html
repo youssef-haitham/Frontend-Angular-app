@@ -1,0 +1,54 @@
+<!--NAVIGATION BAR-->
+<div>
+<nav class="navbar navbar-expand-lg navbar-light py-0  " style="background-image: url('https://media.istockphoto.com/photos/dark-brown-scratched-wooden-cutting-board-wood-texture-background-picture-id667224216?k=6&m=667224216&s=170667a&w=0&h=c5ZwA7ZLwsXLSY1NKY3Q1Pj0O-1MbGSS3_aay-1G1fw=');">
+  <!--LOGO AND NAME-->  
+  <a class="navbar-brand" href="#">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmFwcHl0ZWNoLmZvb2R5X2ljb25fMTU4MTU1Njk1Nl8wNzI/icon.png?w=170&fakeurl=1" alt="Logo" style="width:3vw;">
+    </a> 
+    <span class="navbar-brand py-0">
+    FOODY
+    </span>
+  <!--Collapsable Menu-->
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <!--Left side items-->
+      <ul class ="nav navbar-nav mr-auto py-0" >
+        <li class="nav-item py-0" routerLinkActive="active">
+          <a class="nav-link" routerLink="/" >Home</a>
+        </li>
+      </ul>
+      <!--Right side items-->
+
+        <ul class="nav navbar-nav ml-auto py-0"  *ngIf="!loginStatus();else user">
+          <li class="active nav-item py-0" routerLinkActive="active">
+            <a class="nav-link"  routerLink="/signUp">Sign Up</a>
+          </li>
+          <li class="nav-item py-0" routerLinkActive="active">
+            <a class="nav-link" routerLink="/login">Sign In</a>
+          </li>
+        </ul>
+        <ng-template #user>
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item" style="margin:auto;color: cornsilk;"><p>{{username}}</p></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://i.pinimg.com/originals/48/13/94/4813941c77b717b47eb013ad7fbcd832.png" width="50" height="50" class="rounded-circle">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              
+              <a class="dropdown-item">Profile</a>
+              <a class="dropdown-item" routerLink="/cart">My Cart</a>
+              <a class="dropdown-item" (click)="logOut()">Log Out</a>
+            </div>
+          </li>   
+          
+        </ul>
+      </ng-template>
+
+    </div> 
+</nav>
+</div>
+<!--NAVIGATION BAR-->

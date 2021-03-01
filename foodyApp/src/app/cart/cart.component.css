@@ -1,0 +1,143 @@
+.title{
+    font-weight: bolder;
+
+    font-size: large;
+}
+.qty{
+    width: 3em;
+  text-align: center;
+  font-size: 1em;
+  padding: .25em;
+  margin: 1em .5em 0 0;
+}
+.remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+    font-size: 15px;
+    border-radius: 3px;
+  }
+ .remove-product:hover {
+    background-color: #a44;
+  }
+  
+.cart {
+    margin: auto;
+  
+    background: rgb(255, 255, 255);
+    display: table;
+    padding: 4em 4em 2em;
+    width: 60%;
+    
+    top: 4vw;
+    position:relative;
+    box-shadow: 0 0 1em #222;
+    border-radius: 2px;
+  }
+h2 {
+    margin: 0 0 50px 0;
+    padding: 0px;
+    text-align: center;
+    font-size: 30px;
+    color: #666666;
+    border-bottom: solid 1px #e5e5e5;
+  }
+
+
+  .order-info {
+    height:100%;
+    width:100%;
+    
+    padding-right:25px;
+    box-sizing:border-box;
+    display:inline-block;
+    
+    position:relative;
+  }
+  .price {
+    bottom:0px;
+    position: relative;
+
+    color:#4488dd;
+    font-size: large;
+  }
+  .order-table {
+      position:relative;
+      width: 100%;
+  }
+  .line {
+    height:1px;
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+    background:#ddd;
+  }
+  .order-table td:last-of-type {
+    vertical-align:top;
+    padding-left:25px;
+  }
+  .order-info-content {
+    table-layout:fixed;
+    width:100%;
+  
+  }
+.checkout-btn{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    background: rgba(119, 68, 1, 0.7);
+    border-radius: 2px;
+    left:200%;
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 2em;
+    line-height: 1.6em;
+    margin: 2em 0 0;
+    outline: none;
+    padding: 0.8em 0;
+    text-shadow: 0 1px #e6e33e;
+}
+.checkout-btn:hover{
+    background: rgba(83, 53, 12, 0.7);;
+    text-shadow: 0 1px 3px rgba(70, 93, 41, 0.7);
+}
+
+.totals .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .totals .totals-item label {
+    float: left;
+    clear: both;
+    width: 79%;
+    text-align: right;
+  }
+  .totals .totals-item .totals-value {
+    float: right;
+    width: 21%;
+    text-align: right;
+  }
+  .totals .totals-item-total {
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  }
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+      background: #1C2331!important;
+  }
+}
+.view,body,html{height:100%}.navbar{
+  background-color:rgba(0,0,0,.2)
+}
+.page-footer,.top-nav-collapse{
+  background-color:#1C2331
+}
+@media only screen and (max-width:768px){
+  .navbar{background-color:#1C2331}}

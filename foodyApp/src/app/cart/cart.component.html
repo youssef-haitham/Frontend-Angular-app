@@ -1,0 +1,73 @@
+<div class="cart">
+    <table id="itemCart" class="order-table">
+
+    <div>
+        <h2><img width="10%" height="10%" style="margin-right: 2%;" src="https://www.flaticon.com/svg/static/icons/svg/2037/2037596.svg"/> <span>My Cart</span></h2> </div>
+
+        <!--OneItem-->
+        <div *ngFor="let item of cart.cartItems;let i =index">
+        <tr> 
+          <td rowspan="5" colspan="2"><img width=200px height="200px" src={{item.product.image}}/>
+          </td>
+        </tr>
+        <tr>
+            <td ><span class='title'>{{item.product.name}}</span></td>
+        </tr>
+        <tr>
+
+            <td >{{item.product.description}}</td>
+            
+        </tr>
+
+        <tr>
+            
+            <td > 
+               Amount: <input (change)="setAmount($event,i)" type="number" min="1" value="{{item.quantity}}"  class="qty" /> x ${{item.product.price}}
+            </td>
+        </tr>
+        <tr>
+          <td></td>
+            <td>
+                <button class="remove-product" (click)="removeProduct(i)">
+                Remove
+              </button>
+            </td>
+            <td><div class="price" id="p"> ${{item.product.price*item.quantity}}</div></td>
+            
+        </tr>
+      
+        <tr > <td ><hr></td></tr>
+        </div>
+    </table>
+    <hr>
+    <div class="alert alert-success alert-dismissible fade show" *ngIf="checkedOut">
+      Thank you for shopping with Foody! Your order is on the way.
+  </div>
+  <div class="alert alert-danger alert-dismissible fade show" *ngIf="emptyCheckOut">
+    Please add items to your cart before checkout.
+</div>
+
+    <!--Reciept-->
+    <div class="totals">
+        <div class="totals-item">
+          <label>Subtotal</label>
+          <div class="totals-value" id="cart-subtotal">$<em>{{subtotal.toFixed(2)}}</em></div>
+        </div>
+        <div class="totals-item">
+          <label>Tax (14%)</label>
+          <div class="totals-value" id="cart-tax">$<em>{{vat.toFixed(2)}}</em></div>
+        </div>
+        <div class="totals-item">
+          <label>Shipping</label>
+          <div class="totals-value" id="cart-shipping">$<em>{{shipping.toFixed(2)}}</em></div>
+        </div>
+        <div class="totals-item totals-item-total">
+          <label><span style="font-weight: bolder; font-size: larger;">Total</span></label>
+          <div class="totals-value" id="cart-total"><span class="price">$<em>{{total.toFixed(2)}}</em></span></div>
+        </div>
+      </div>
+    
+   
+    <button class="checkout-btn" (click)="checkOut()" value="Check Out">Check Out</button>
+  
+  </div>

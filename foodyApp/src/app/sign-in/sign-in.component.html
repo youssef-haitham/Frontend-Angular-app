@@ -1,0 +1,84 @@
+<div>        
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-dark text-center" style="background-image: url('https://thumbs.dreamstime.com/b/doodle-meal-seamless-background-hand-drawn-including-sausage-peppers-onions-greens-chicken-tomato-food-pattern-your-design-60219222.jpg'); display:inline-block;" >
+                <div class="">
+                    <div class="card-body"  >
+                        <img src="https://findicons.com/files/icons/2443/bunch_of_cool_bluish_icons/512/unlock.png" style="width:50%; padding-top: 30%;">
+                        <div >
+                            <h1 class="py-6">Welcome Back!</h1>
+                            <p class="sideContent"><strong>Login to your account to enjoy full on all foody delivery services </strong>
+                        
+                            <p style="padding-top:1 0%;">
+                                <span class="sideContent">
+                                    <strong>New to Foody? Join us now</strong>
+                                </span> 
+                                <button class="btn bt-primary signInButton" (click)="signUpNav()">
+                                    <strong>Sign Up!</strong>
+                                </button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-wrap" >
+                    <form (ngSubmit)="onSubmit()" #f="ngForm" class="needs-validation" >
+                        <h2>Foody-Login</h2>
+                        <!--EMAIL FIELD-->
+                        <div class=field>
+                            <label for="email" class="floatLabel">Email</label>
+                            <input
+                            class="form-control" 
+                            #email="ngModel"
+                            name="email" 
+                            type="text" 
+                            required
+                            email
+                            ngModel
+                            placeholder="johndoe@example.com">
+                            <div class="feedback" *ngIf="!email.valid && email.touched">
+                                Please enter a valid email address
+                            </div>
+                        </div>
+
+                        <!--PASSWORD FIELD-->
+                        <div class="field">
+                            <label for="password" class="floatLabel">Password</label>
+                            <input  
+                            class="form-control"
+                            #password="ngModel" 
+                            name="password" 
+                            type="password" 
+                            required 
+                            ngModel
+                            placeholder="password">
+                        </div>
+                        <div class="alert alert-danger alert-dismissible fade show" *ngIf="wrongUser">
+                            {{message}}
+                        </div>
+                        <!--SUBMIT BUTTON-->
+                        <div class="field">
+                            <button 
+                                class="btn bt-primary"
+                                type="submit" 
+                                id="submit"
+                                [disabled]="!f.valid"
+                                >
+                                Sign In!
+                            
+                                <div class="spinner-border text-light" *ngIf="submitted"style="width: 3rem; height: 3rem;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </button>
+                        </div>
+                        <hr> 
+                    </form>
+                </div>
+            </div>
+         </div>
+     </div>
+</div>
+ 
+ 

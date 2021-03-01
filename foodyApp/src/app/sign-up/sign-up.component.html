@@ -1,0 +1,176 @@
+<div>
+   <!--SIDE SECTION-->
+    <section class="testimonial " id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-5 text-dark text-center" style="background-image: url('https://thumbs.dreamstime.com/b/doodle-meal-seamless-background-hand-drawn-including-sausage-peppers-onions-greens-chicken-tomato-food-pattern-your-design-60219222.jpg');" >
+                <div class="">
+                    <div class="card-body"  >
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:50%; padding-top: 30%;">
+                        <div >
+                            <h1 class="py-6">Registration</h1>
+                            <p class="sideContent"><strong>Join us today and enjoy premium service of the finest cuisines and new tasty offers daily! </strong>
+                     
+                            <p style="padding-top:60%;">
+                                <span class="sideContent">
+                                    <strong>Already a member?</strong>
+                                </span> 
+                                <button class="btn bt-primary signInButton" (click)="signInNav()">
+                                    <strong>Sign In!</strong>
+                                </button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+            <!--FORM-->        
+            <div class="col-md-7">
+
+                <div class="form-wrap" >
+                    <form (ngSubmit)="onSubmit()" #f="ngForm" class="needs-validation" >
+
+                        <h2>Foody-Register</h2>
+                        <!--FIRST NAME FIELD-->
+                        <div class="field">
+                            <label for="firstName" class="floatLabel">First Name</label>
+                            <input
+                                #firstName="ngModel"
+                                name="firstName"
+                                type="text" 
+                                class="form-control"
+                                required 
+                                pattern="[a-zA-Z]+"
+                                ngModel
+                                placeholder="Enter your first name">  
+                            <div class="feedback" *ngIf="!firstName.valid && firstName.touched">
+                                <div *ngIf="firstName.value==='';else FNnotValid">Please enter your first name</div>
+                                <ng-template #FNnotValid>First Name can only contain alphabets</ng-template>
+                            </div>
+
+                        </div>
+                        <!--LAST NAME FIELD-->
+                        <div class="field">
+                            <label for="lastName" class="floatLabel">Last Name</label>
+                            <input
+                                #lastName="ngModel"
+                                name="lastName" 
+                                type="text" 
+                                class="form-control"
+                                required 
+                                pattern="[a-zA-Z]+"
+                                ngModel
+                                placeholder="Enter your last name">
+                            <div class="feedback" *ngIf="!lastName.valid && lastName.touched">
+                                <div *ngIf="lastName.value==='';else LNnotValid">Please enter your last name</div>
+                                <ng-template #LNnotValid>Last Name can only contain alphabets</ng-template>
+                            </div>
+                        </div>
+
+                        <!--EMAIL FIELD-->
+                        <div class=field>
+                            <label for="email" class="floatLabel">Email</label>
+                            <input
+                            class="form-control" 
+                            #email="ngModel"
+                            name="email" 
+                            type="text" 
+                            required
+                            email
+                            ngModel
+                            placeholder="johndoe@example.com">
+                            <div class="feedback" *ngIf="!email.valid && email.touched">
+                                Please enter a valid email address
+                            </div>
+                        </div>
+
+                        <!--PASSWORD FIELD-->
+                        <div class="field">
+                            <label for="password" class="floatLabel">Password</label>
+                            <input 
+                            ngbPopover="Password must be at least 8 characters long" 
+                            triggers="mouseenter:mouseleave" 
+                            class="form-control"
+                            #password="ngModel" 
+                            name="password" 
+                            type="password" 
+                            required 
+                            minlength=8
+                            ngModel
+                            placeholder="password">
+                            <div class="feedback" *ngIf="!password.valid && password.touched">
+                                Password must be at least 8 characters
+                            </div>
+                        </div>
+
+                        <!--CONFIRM PASSWORD FIELD-->
+                        <div class="field">
+                            <label for="confirmPassword" class="floatLabel">Confirm Password</label>
+                            <input
+                            [ngClass]="{'invalid' : confirmPassword.value !== password.value }" 
+                            class="form-control"
+                            #confirmPassword="ngModel" 
+                            name="confirmPassword" 
+                            type="password" 
+                            required
+                            minlength=8
+                            ngModel
+                            placeholder="confirm password">
+                            <div class="feedback" *ngIf="!(confirmPassword.value==password.value) && confirmPassword.touched">Passwords do not match</div>
+                        </div>
+                        
+                        <!--PHONE NUMBER FIELD-->
+                        <div class="field">
+                            <label for="mobile" class="floatLabel">Mobile</label>
+                            <input 
+                            class="form-control"
+                            #mobile="ngModel" 
+                            name="mobile" 
+                            type="text" 
+                            minlength=11 
+                            maxlength="11" 
+                            pattern="01[0-9]+"
+                            required
+                            ngModel
+                            placeholder="phone number">
+                            <div class="feedback" *ngIf="!mobile.valid && mobile.touched">Please enter your mobile number [01*********]</div>
+                        </div>
+
+                        <!--ADDRESS FIELD-->
+                        <div class="field">
+                            <label for="address" class="floatLabel">Address</label>
+                            <input
+                                class="form-control" 
+                                #address="ngModel"
+                                name="address" 
+                                type="text"
+                                required
+                                ngModel
+                                placeholder="address">
+                            <div class="feedback" *ngIf="!address.valid && address.touched">Please enter your address</div>
+                        </div>
+
+                        <!--SUBMIT BUTTON-->
+                        <div class="field">
+                            <button 
+                                class="btn bt-primary"
+                                type="submit" 
+                                id="submit"
+                                [disabled]="!f.valid"
+                                >
+                                Sign Up!
+                               
+                                <div class="spinner-border text-light" *ngIf="submitted"style="width: 3rem; height: 3rem;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </button>
+                            
+                        </div>
+                        <hr> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
